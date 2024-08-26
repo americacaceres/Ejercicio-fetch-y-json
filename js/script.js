@@ -18,4 +18,16 @@ function showData(dataArray) {
   }
 }
 
+function getJSON( url ) {
+     return fetch(url)
+    .then ( response => {
+       return response.json();
+    })
+    .then (dataList => {
+      showData (dataList.students);
+    })
+
+  }
+getJSON(DATA_URL)
 // Escribe el código necesario para realizar el fetch al archivo con los datos y mostrar los estudiantes con la función showData
+
